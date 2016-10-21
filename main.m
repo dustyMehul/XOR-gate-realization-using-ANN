@@ -4,15 +4,15 @@ clc;
 
 
 %%Training Set
-A = [0; 0; 1; 1];
-B = [0; 1; 0; 1];
-D = [0; 1; 1; 0];
+A = [0.1; 0.1; 0.9; 0.9];
+B = [0.1; 0.9; 0.1; 0.9];
+D = [0.9; 0.1; 0.1; 0.9];
 
 %% Initialization Variables
-W = 0.5*ones(6,1);
-%for i=1:6
- %   W(i) = rand;
-%end
+W = ones(6,1);
+for i=1:6
+   W(i) = rand;
+end
 
 
 n=1;
@@ -20,7 +20,7 @@ a=1;
 
 
 %% learing Process
-N=100;  %for 10 times training the network
+N=1000;  %for 10 times training the network
 for j=1:N
     fprintf('-----------------------\n')
     fprintf('Training iteration %d of %d begins...\n\n',j,N);
@@ -66,12 +66,12 @@ for j=1:N
         E4 = D(i) - Y4;
     end
     fprintf('%f\n%f\n%f\n%f\n%f\n%f\n',W(1),W(2),W(3),W(4),W(5),W(6));
-    fprintf('%f\t%f\t%f\t%f\n',A(1),A(2),A(3),A(4));
-    fprintf('%f\t%f\t%f\t%f\n',B(1),B(2),B(3),B(4));
-    fprintf('%f\t%f\t%f\t%f\n',D(1),D(2),D(3),D(4));
+    fprintf('A = %f\t%f\t%f\t%f\n',A(1),A(2),A(3),A(4));
+    fprintf('B = %f\t%f\t%f\t%f\n',B(1),B(2),B(3),B(4));
+    fprintf('D = %f\t%f\t%f\t%f\n',D(1),D(2),D(3),D(4));
     
     
-    fprintf('\n\n%f\t%f\t%f\t%f\n\n\n',Y(1),Y(2),Y(3),Y(4));
+    fprintf('\nO = %f\t%f\t%f\t%f\n\n\n',Y(1),Y(2),Y(3),Y(4));
     
     
 
