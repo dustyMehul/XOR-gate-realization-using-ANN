@@ -71,7 +71,7 @@ for j=1:N
     fprintf('%f\t%f\t%f\t%f\n',D(1),D(2),D(3),D(4));
     
     
-    fprintf('%f\t%f\t%f\t%f\n\n\n',Y(1),Y(2),Y(3),Y(4));
+    fprintf('\n\n%f\t%f\t%f\t%f\n\n\n',Y(1),Y(2),Y(3),Y(4));
     
     
 
