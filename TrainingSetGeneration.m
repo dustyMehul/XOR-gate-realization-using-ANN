@@ -19,10 +19,11 @@ for i=1:1000
        if(Ts(i,2)<=0.25)
            Ts(i,3) = 0.85;
        else
-           Ts(i,3)=0.15;
+           Ts(i,3)=0.15;clc
        end
    end
 end
+
 plot(0,0)
 hold
 for i=1:1000
