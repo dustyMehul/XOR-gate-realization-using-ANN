@@ -21,12 +21,11 @@ a=1;
 plot(0,0);
 hold;
 %% learing Process
-N=1000;  %for 1000 times training the network
+N=1000;  %for 10 times training the network
 for j=1:N
     %fprintf('-----------------------\n')
     %fprintf('Training epoch %d of %d begins...\n\n',j,N);
-    for k=1:1000
-        i=randi(10000);
+    for i=1:10000
         V2 = W(1)*Ts(i,1) + W(4)*Ts(i,2);
         V3 = W(2)*Ts(i,1) + W(3)*Ts(i,2);
    
@@ -55,8 +54,7 @@ for j=1:N
     %fprintf('Training epoch %d of %d compleated!!!\n\n',j,N);
     Y = zeros(4,1);
     errorEnergy = 0;
-    for k=1:1000
-        i = randi(10000);
+    for i=1:10000
         V2 = 1+W(1)*Ts(i,1) + W(4)*Ts(i,2);
         V3 = 1+W(2)*Ts(i,1) + W(3)*Ts(i,2);
    
@@ -86,28 +84,11 @@ end
 fprintf('Final Weights:');
 W
 
-TestingSet = zeros(500,3);
+TestingSet = zeros(10000,3);
 
-for i=1:500
+for i=1:1000
     TestingSet(i,1) = rand;
     TestingSet(i,2) = rand;
 end
 
-for i=1:500
-        V2 = 1+W(1)*TestingSet(i,1) + W(4)*TestingSet(i,2);
-        V3 = 1+W(2)*TestingSet(i,1) + W(3)*TestingSet(i,2);
-   
-        Y2 = sgmd(1,V2);
-        Y3 = sgmd(1,V3);
-   
-        V4 = W(5)*Y2 + W(6)*Y3;
-   
-        out = sgmd(1,V4);
-        
-        if(out<=0.5)
-            TestingSet(i,3)=0;
-        else
-            TestingSet(i,3)=1;
-        end 
-end
 
