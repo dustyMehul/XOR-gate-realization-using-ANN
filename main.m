@@ -6,7 +6,7 @@ clc;
 %%Training Set
 A = [0.1; 0.1; 0.9; 0.9];
 B = [0.1; 0.9; 0.1; 0.9];
-D = [0.9; 0.1; 0.1; 0.9];
+D = [0.1; 0.9; 0.9; 0.1];
 
 %% Initialization Variables
 W = ones(6,1);
